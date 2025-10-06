@@ -4,16 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Web de David</title>
-  <!-- Link és un codi html que permet unir o linkar arxius CSS. Els arxius CSS són conjunt de codis
-  que ens permeten donar estil a la pàgina. CSS (Cascade Style Sheet) significa full d'estil en cascada i permet donar marges al text,
-  triar el tipus de lletra, triar el color de la lletra, el tamany de la lletra, el interlineat. En cascada vol dir
-  que afecta a diverses pàgines, una darrere de l'altre. Les dues linies seguents són CDN: Content Delivery Network,
-  es a dir una adreç d'internet on està una biblioteca amb moltes instruccions que ens ajuden a fer estils 
-  desplegables. Bootstrap permet fer menús desplegables amb estil (1a linea dels 2). La segona linea inclou la biblioteca
-  d'estils font-awesome, perque inlou fonts o tipus de lletra amb simbols i dibuixos amb icones. Si no poso
-  o m'oblido les dues linies seguents no funcionarà algunes linies que estàn més endevant. Per exemple la linea 26 i 27 
-  no funcionarà perquè dropdown-item pertany a boostrap. Font awesome, si no afegim font-awesome la linea 93,95,96 
-  no dibuixarien icones en el menú, exemple: fa-solid fa-code -->
+  <!--Link és un codi html que permet unir o linkar arxius css. Els arxius css són conjunt de codis que ens permeten donar estil a la pàgina.
+  css significa full d'estil cascada i permet donar marges al text, triar el tipus de lletra, el color de la lletra, el tamany de la lletra, l'interlineat. En cascada vol dir que afecta a diverses pàgines, una darrere de l'altre.
+  Les dues lletres següents són CDN: Content Delivery Network, és a dir una adreça d'internet on està una biblioteca amb moltes instrucions que ens ajuden a fer estils desplegables. Bootstrap permet fer menús desplegables amb estil (la línea 2).
+  La segona línia inclou la biblioteca d'estils fonts awesome, perquè inclou fonts o tipus de lletres amb símbols i dibuixos a,b icones. Si no poso o m'oblido les dues línies següents no funcionaràn algunes línies que estan més endavant.
+  Per exemple les línies 26 i 27 no funcionaràn perquè dropbox-item pertany a bootstrap. Font awesome, si no afegim font awesome en les lineas 94,95,96 no dibuixarien icones en el menú, exemple: fa-sòlid fa-code. -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
   <style>
@@ -77,7 +72,7 @@
       <!-- 5. Logo i text -->
       <a class="navbar-brand d-flex align-items-center" href="#">
         <img src="logo.png" alt="Logo" class="logo rounded-circle me-2">
-        <span class="fw-bold">Web del David</span>
+        <span class="fw-bold">Web d'alumne</span>
       </a>
 
       <!-- Botó menú mòbil -->
@@ -91,11 +86,11 @@
           <!-- Projecte 1 -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="proj1Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="fa-solid fa-diagram-project me-1"></i> Projecte 1
+              <i class="fa-solid fa-diagram-project me-1"></i> Projecte 1: Braç robòtic
             </a>
             <ul class="dropdown-menu" aria-labelledby="proj1Dropdown">
-              <li><a class="dropdown-item" href="https://bpoofu.github.io/vectors "><i class="fa-solid fa-code me-1"></i>Projecte 1.1</a></li>
-              <li><a class="dropdown-item" href="#"><i class="fa-solid fa-database me-1"></i> </a>Projecte 1.2</li>
+              <li><a class="dropdown-item" href="https://dgarcia7777.github.io/cdirecta"><i class="fa-solid fa-code me-1"></i> 1.1. CINEMÀTICA DIRECTA</a></li>
+              <li><a class="dropdown-item" href="#https://dgarcia7777.github.io/cinversa"><i class="fa-solid fa-database me-1"></i> 1.2. CINEMÀTICA INVERSA</a></li>
             </ul>
           </li>
           <!-- Projecte 2 -->
@@ -118,9 +113,9 @@
   <!-- Contingut -->
   <main class="container py-5">
     <h1 class="display-5 fw-bold mb-4">Benvinguts als Projectes</h1>
-    <p class="lead">Em dic David García, sóc <i>alumne</i> de <b>Robòtica</b> de 1r
-      de Batxillerat de <a href="https://agora.xtec.cat/ies-pompeu-fabra-martorell/">l'Institut Pompeu Fabra</a>. Aquesta pàgina està escrita en llenguatg html(llenguatge marques d'hipertext) i utilitza CSS(fulles d'estil en català) que ens ajuda a donar la forma . A més utilitza JavaScript que proporciona tota la interactivitat de la pàgina web.
-    Utilitza biblioteques externes com bottstrap que conté JavaSxript i CSS que ens permet fer un menú desplegable i posar un logo fàcilment. Una altre llibreria externa que utilitzem és fontawesome que ens permet posar símbols amb facilitat, son els símbols que estan en el menú </p>
+    <p class="lead">Em dic David García, sóc <i>alumne</i> de <b>robótica</b> de 1r de Batxillerat de <a href="https://agora.xtec.cat/ies-pompeu-fabra-martorell/">l'Institut Pompeu Fabra</a>
+      gable, icones Font Awesome, mode clar i fosc, i disseny responsiu per mòbil i ordinador utilitzant Bootstrap 5.3.8. Aquest és el punt de partida per editar tot i fer projectes amb el professor Francesc Pérez.</p>
+  <p> Aquesta pàgina web està escrita en html (llenguatge de marques de hipertext) que dona l'estructura (paràgrafs, títols,imatges, links, audios) emprant <etiquetas></etiquetas>.</p> un paràgraf</p>
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
@@ -139,10 +134,6 @@
         themeIcon.classList.remove('fa-moon');
         themeIcon.classList.add('fa-sun');
       }
-    });
-  </script>
-</body>
-</html>
     });
   </script>
 </body>
