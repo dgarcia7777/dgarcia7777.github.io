@@ -30,6 +30,23 @@
     <style>
         /* ===== COLORS & ROOT VARIABLES ===== */
         :root{
+            /* Significa arrel en angles,es una paraula que s'utilitza molt en el món informàtic, per exemple el linux, que es un sistema operatiu 
+            alternatiu i millor que el windows. En aquest ca root singiifca l'element significa el document arrel del html, aquest és el propi html.
+            Antigament es deia html {propietat: valor} , però es fa servir "root{--variable:valor}" perque té una propietat més alta que html.
+            Perque tots els estils que estiguin dintre de root afectaran a tota la pagina web html. Perque "--variable" és una variable CSS global, 
+            que puc utilitzar vàries vegades. Aquestes variables s'anomenen variables CSS personalitzades, o custom properties. Per exemple la vaiable
+            primary és un color que surt diverses vegades, per exemple en botons d'aquest mateix color en el fons, en els titols, en àrees com header
+            que es la capçalera principal. Això permet tenri el codi més organitzat, perquè el canvio una vegada en el root i es canvia en diferents
+            llocs a la vegada.També permet codis més coherents visualment, ja que és el mateix color, i és més fàcil d'ampliar, com el mode fosc
+            i clar, el primary és el color principal de la web, en aquest  cas só tons foscos per capçeleres i fon.
+            El secondary és un color secundary i s'aplica en enllaços i coses que li vols donar importància.
+            El accent dona encara més importancia, per alertes o botons importants.
+            Light és un color clar que es fa servir per fons o textos suaus, que no vulguis destacar o per marcar que és una cosa diferent.
+            Muted és un color apagat per textos secundaris.
+            Succes és un color verd que significa exit o que s'ha fet bé.
+            Card-bg és el fons d'una targeta o contenidor.
+            Glass és un efecte de vidre translucid, perquè 0.6 és el canal alpha o transparència que va després de rgb, que significa el color.
+            Radius és el arrodoniment de les cantonades lg/
             --primary: #2c3e50;
             --secondary: #3498db;
             --accent: #e74c3c;
@@ -46,6 +63,7 @@
 
         /* ===== BASIC LAYOUT ===== */
         *{box-sizing:border-box}
+        /* L'asterisc * és un selector universal, per exemple si jo vull buscar un document
         html,body{
             height:100%;
             margin:0;
