@@ -46,7 +46,7 @@
             Succes és un color verd que significa exit o que s'ha fet bé.
             Card-bg és el fons d'una targeta o contenidor.
             Glass és un efecte de vidre translucid, perquè 0.6 és el canal alpha o transparència que va després de rgb, que significa el color.
-            Radius és el arrodoniment de les cantonades lg/
+            Radius és el arrodoniment de les cantonades lg/large(corba més arrodonida), sm/small (corba menys arrodonida). 
             --primary: #2c3e50;
             --secondary: #3498db;
             --accent: #e74c3c;
@@ -63,13 +63,20 @@
 
         /* ===== BASIC LAYOUT ===== */
         *{box-sizing:border-box}
-        /* L'asterisc * és un selector universal, per exemple si jo vull buscar un document
+        /* L'asterisc * és un selector universal, per exemple si jo vull buscar un document i poso un asterisc al buscador, per exemple: *.js- buscaria tots els
+            documents que tenen js(javascript), *.docx busca tots els documents word, en aquest cas, posar un asterisc afecta a totes les etiquetes html
+            La propietat box-sizing controla com es calcula l'amplada i l'alçada d'un element, concretament si el padding i el borden s'inclouen dins
+            de les mides o no. En el casa border-box que és el valor de la propietat box-sizing, l'amplada i l'alçada de totos el elemtns inclouen 
+            el border i el padding, en canvi si en comptes de border-box posés content-box l'amplada total sería més gran i hauriem de sumarel padding
+            i el border. És més fàcil per a un dissenyador fer border-box perquè té en compte totes les mides*/
         html,body{
             height:100%;
             margin:0;
             padding:0;
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            /*És l'ordre de prioritzar cada tipus de lletra*/
             background: linear-gradient(135deg,#f5f7fa 0%, #d8e1ef 100%);
+            /*Linear -gradient fa una transició de color de fons(degradat suau perqué hi ha poca diferencia entre les lletres al abecedari)
             color:#222;
         }
 
