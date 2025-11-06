@@ -76,17 +76,26 @@
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             /*És l'ordre de prioritzar cada tipus de lletra*/
             background: linear-gradient(135deg,#f5f7fa 0%, #d8e1ef 100%);
-            /*Linear -gradient fa una transició de color de fons(degradat suau perqué hi ha poca diferencia entre les lletres al abecedari)
+            /*Linear -gradient fa una transició de color de fons(degradat suau perqué hi ha poca diferencia entre les lletres al abecedari d-fi,)*/
             color:#222;
+            /*Color és el color del text*/
         }
 
         .app {
+            /*Quan hi ha un punt abans de app significa que és un identificador o ID. A la linea 305 hi ha un contenirdor o divisor que
+            tindrà una amplada màxima i uns marges on estaràn els resultats.*/
             max-width: 1100px;
             margin: 28px auto;
             padding: 20px;
         }
 
         header {
+            /*A una pàgina web pot haber una capçalera o header i a la part inferior un peu de pàgina o footer.
+            Quan el gradient lineal és de 90 graus, perquè posa 90 deg vol dir 90 deegrees vol dir que giro la pantalla
+            90 graus vol dir que en quin sentit va el degradat de color, en aquest cas va a la dreta. Si és 180 deg
+            significa que el degradat va cap a baix. I si es 270 deg girarà cap a l'esquerra el degradat de color. I si
+            són 0deg girarà el degradat de colors cap amunt.
+            Linear gradient té tres arguments que són el angle, el color inicial i el final.*/
             background: linear-gradient(90deg,var(--primary),#24414a);
             color: #fff;
             padding: 22px;
