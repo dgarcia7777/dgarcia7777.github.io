@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <title>Poeta Intel·ligent</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #dfe9f3, #ffffff);
+      text-align: center;
+      padding: 50px;
+    }
+    h1 { font-size: 2.5em; }
+    input {
+      padding: 12px;
+      font-size: 16px;
+      width: 300px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      margin-left: 10px;
+      border: none;
+      border-radius: 10px;
+      background: #4a90e2;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover { background: #357abd; }
+    #resposta {
+      margin-top: 40px;
+      font-style: italic;
+      font-size: 22px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+    #resposta.show { opacity: 1; }
+  </style>
+</head>
+<body>
+
+  <h1>Com et sents avui?</h1>
+  <input type="text" id="text" placeholder="Escriu una frase...">
+  <button onclick="analitza()">Inspirar-me</button>
+
+  <div id="resposta"></div>
+
+  <script>
+    const diccionari = {
+      alegria: ["feliç", "content", "alegria", "somriure", "il·lusió"],
+      tristesa: ["trist", "tristesa", "sol", "buit", "plorar"],
+      amor: ["amor", "estimar", "cor", "petó", "t'estimo"],
+      por: ["por", "espant", "angoixa", "terror", "nerviós"],
+      rabia: ["ràbia", "enfadat", "odi", "fúria", "irritat"]
+    };
+
+    const frases = {
+      alegria: [
+        "La llum del teu riure pinta el món de primavera.",
+        "Cada instant feliç és una estrella que neix dins teu."
+      ],
+      tristesa: [
+        "La nit del teu cor guarda estrelles que encara no veus.",
+        "De la tristesa neixen les arrels més profundes de l’ànima."
+      ],
+      amor: [
+        "El teu amor és un eco infinit dins del temps.",
+        "Estimar és escriure llum en la pell del record."
+      ],
+      por: [
+        "Darrere la por, hi ha camins que esperen ser trepitjats.",
+        "La por tremola quan el teu cor decideix avançar."
+      ],
+      rabia: [
+        "La tempesta dins teu també sap tornar-se calma.",
+        "Fins i tot el foc més intens pot aprendre a ser llum."
+      ],
+      neutre: [
+        "Ets un misteri suau que el temps encara està llegint.",
+        "En cada silenci teu, hi ha un univers latent."
+      ]
+    };
+
+    function neteja(text) {
+      return text
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/\p{Diacritic}/gu, "");
+    }
+
+    function detectaSentiment(text) {
+      let puntuacio = {
+        alegria: 0,
+        tristesa: 0,
+        amor: 0,
+        por: 0,
+        rabia: 0
+      };
+
+      for (let tipus in diccionari) {
+        diccionari[tipus].forEach(paraula => {
+          if (text.includes(neteja(paraula))) {
+            puntuacio[tipus]++;
+          }
+        });
+      }
+
+      let millor = "neutre";
+      let max = 0;
+
+      for (let tipus in puntuacio) {
+        if (puntuacio[tipus] > max) {
+          max = puntuacio[tipus];
+          millor = tipus;
+        }
+      }
+
+      return millor;
+    }
+
+    function fraseAleatoria(llista) {
+      return llista[Math.floor(Math.random() * llista.length)];
+    }
+
+    function analitza() {
+      const input = document.getElementById("text").value;
+      const text = neteja(input);
+
+      const sentiment = detectaSentiment(text);
+      const frase = fraseAleatoria(frases[sentiment]);
+
+      const div = document.getElementById("resposta");
+      div.classList.remove("show");
+
+      setTimeout(() => {
+        div.innerText = frase;
+        div.classList.add("show");
+      }, 200);
+    }
+  </script>
+
+</body>
+</html>
